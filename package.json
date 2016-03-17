@@ -1,7 +1,7 @@
 {
-  "name": "webpack-express",
+  "name": "angular2-webpack-express",
   "version": "1.0.0",
-  "description": "",
+  "description": "Barebone Starter for Zefr Project",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
