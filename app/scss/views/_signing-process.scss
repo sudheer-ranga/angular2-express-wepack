@@ -1,0 +1,17 @@
+.signing-process-wrapper {
+	background: #41b9d6;
+	box-shadow: 0 0 10px #000;
+	max-width: 500px;
+	padding: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+.signing-process-btn {
+	background: transparent;
+	border: 2px solid white;
+	font-weight: 600;
+}

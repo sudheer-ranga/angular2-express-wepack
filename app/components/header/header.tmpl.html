@@ -1,0 +1,18 @@
+<header class="main-header">
+    <div class="top-bar">
+        <div class="top-bar-title">
+            <a href="/"><img src="images/logo.png" alt=""></a>
+        </div>
+        <div id="responsive-menu">
+            <div class="top-bar-right">
+                <ul class="menu" *ngIf="!isAuth()">
+                    <li><a [routerLink]="['Signup']">Sign Up</a></li>
+                    <li><a [routerLink]="['Signin']">Sign In</a></li>
+                </ul>
+                <ul class="menu" *ngIf="isAuth()">
+                    <li><a (click)="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
