@@ -1,11 +1,10 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, Router} from "angular2/router";
-import {SigninComponent} from "./signin/signin.component";
-import {SignupComponent} from "./signup/signup.component";
-import {HomeComponent} from "./home/home.component"
-import {HeaderComponent} from "./header/header.component";
-import {AuthService} from "./../services/auth/auth.service";
 import {RouterOutlet} from "angular2/router";
+
+import {HeaderComponent} from "./header/header.component";
+import {FooterComponent} from "./footer/footer.component";
+import {HomeComponent} from "./home/home.component"
 
 import '../scss/style.scss';
 
@@ -16,18 +15,12 @@ import '../scss/style.scss';
         <div class="main">
             <router-outlet></router-outlet>
         </div>
+         <my-footer></my-footer>
     `,
-    directives: [HeaderComponent, RouterOutlet]
+    directives: [HeaderComponent, RouterOutlet, FooterComponent]
 })
 @RouteConfig([
-    {path: '/signup', name: 'Signup', component: SignupComponent},
-    {path: '/signin', name: 'Signin', component: SigninComponent},
-    {path: '/home', name: 'Home', component: HomeComponent,useAsDefault: true}
+    {path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true}
 ])
-export class AppComponent implements OnInit {
-    constructor(private _router: Router, private _authService: AuthService) {}
-
-    ngOnInit():any {
-        this._authService.getLoggedOutEvent().subscribe(() => this._router.navigate(['Signin']));
-    }
+export class AppComponent {
 }
